@@ -117,7 +117,7 @@
     // gauge
     var arc = $('gaugeArc');
     arc.style.strokeDashoffset = String(540 - (540 * sc / 100));
-    arc.setAttribute('stroke', sc >= 70 ? '#D4AF6A' : (sc >= 45 ? '#E8A33D' : '#8A8F9C'));
+    arc.setAttribute('stroke', sc >= 70 ? '#3E9AD6' : (sc >= 45 ? '#EEC95B' : '#B9C0CB'));
     $('scoreNum').textContent = sc;
     $('tierLabel').textContent = meta.name;
 

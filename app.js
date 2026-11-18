@@ -159,29 +159,29 @@
       ctx.clearRect(0, 0, W, H);
 
       // ground haze
-      var g = ctx.createLinearGradient(0, H * 0.25, 0, H);
-      g.addColorStop(0, 'rgba(10,14,22,0)');
-      g.addColorStop(1, 'rgba(18,22,34,0.55)');
+      var g = ctx.createLinearGradient(0, H * 0.2, 0, H);
+      g.addColorStop(0, 'rgba(228,241,252,0)');
+      g.addColorStop(1, 'rgba(201,228,248,0.5)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 
       lamps.forEach(function (l) {
         var flick = 0.86 + Math.sin(t * 0.021 + l.ph) * 0.14;
         var alpha = l.out ? 0.05 : l.a * flick;
         var rg = ctx.createRadialGradient(l.x, l.y, 0, l.x, l.y, l.glow);
-        rg.addColorStop(0, 'rgba(240,210,150,' + (alpha * 0.85).toFixed(3) + ')');
-        rg.addColorStop(0.42, 'rgba(212,175,106,' + (alpha * 0.22).toFixed(3) + ')');
-        rg.addColorStop(1, 'rgba(212,175,106,0)');
+        rg.addColorStop(0, 'rgba(238,201,91,' + (alpha * 0.8).toFixed(3) + ')');
+        rg.addColorStop(0.42, 'rgba(248,222,143,' + (alpha * 0.3).toFixed(3) + ')');
+        rg.addColorStop(1, 'rgba(248,222,143,0)');
         ctx.fillStyle = rg;
         ctx.beginPath(); ctx.arc(l.x, l.y, l.glow, 0, Math.PI * 2); ctx.fill();
 
-        ctx.fillStyle = l.out ? 'rgba(120,120,130,.35)' : 'rgba(255,240,215,' + Math.min(1, alpha + 0.35).toFixed(3) + ')';
+        ctx.fillStyle = l.out ? 'rgba(160,168,180,.5)' : 'rgba(224,168,42,' + Math.min(1, alpha + 0.45).toFixed(3) + ')';
         ctx.beginPath(); ctx.arc(l.x, l.y, l.r, 0, Math.PI * 2); ctx.fill();
       });
 
       rings = rings.filter(function (ring) {
         var age = (t - ring.t) / 95;
         if (age > 1) return false;
-        ctx.strokeStyle = 'rgba(226,112,95,' + (0.55 * (1 - age)).toFixed(3) + ')';
+        ctx.strokeStyle = 'rgba(209,82,74,' + (0.5 * (1 - age)).toFixed(3) + ')';
         ctx.lineWidth = 1;
         ctx.beginPath(); ctx.arc(ring.x, ring.y, 6 + age * 110, 0, Math.PI * 2); ctx.stroke();
         return true;

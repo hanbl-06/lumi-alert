@@ -119,7 +119,7 @@
     ctx.clearRect(0, 0, W, H);
 
     // street grid
-    ctx.strokeStyle = 'rgba(255,255,255,.035)';
+    ctx.strokeStyle = 'rgba(28,102,152,.1)';
     ctx.lineWidth = 1;
     var cols = 12, rows = 8;
     for (var r = 0; r < rows; r++) {
@@ -139,20 +139,20 @@
       if (lit) {
         var glow = l.st === 'fixed' ? 30 : 22;
         var g = ctx.createRadialGradient(l.x, l.y, 0, l.x, l.y, glow);
-        var base = l.st === 'fixed' ? '150,220,190' : '240,205,140';
-        g.addColorStop(0, 'rgba(' + base + ',' + (0.5 * flick).toFixed(3) + ')');
-        g.addColorStop(0.45, 'rgba(212,175,106,.1)');
-        g.addColorStop(1, 'rgba(212,175,106,0)');
+        var base = l.st === 'fixed' ? '46,158,107' : '238,201,91';
+        g.addColorStop(0, 'rgba(' + base + ',' + (0.42 * flick).toFixed(3) + ')');
+        g.addColorStop(0.45, 'rgba(248,222,143,.16)');
+        g.addColorStop(1, 'rgba(248,222,143,0)');
         ctx.fillStyle = g;
         ctx.beginPath(); ctx.arc(l.x, l.y, glow, 0, 6.3); ctx.fill();
-        ctx.fillStyle = l.st === 'fixed' ? '#9FE3C5' : 'rgba(255,243,222,.95)';
+        ctx.fillStyle = l.st === 'fixed' ? '#2E9E6B' : '#E0A82A';
       } else {
-        ctx.fillStyle = l.detAt ? 'rgba(226,112,95,.9)' : 'rgba(110,116,128,.55)';
+        ctx.fillStyle = l.detAt ? '#D1524A' : 'rgba(150,158,170,.75)';
       }
       ctx.beginPath(); ctx.arc(l.x, l.y, 3.2, 0, 6.3); ctx.fill();
 
       if (l.st === 'dark') {                       // crosshair on the failure
-        ctx.strokeStyle = l.detAt ? 'rgba(226,112,95,.55)' : 'rgba(140,146,158,.4)';
+        ctx.strokeStyle = l.detAt ? 'rgba(209,82,74,.65)' : 'rgba(150,158,170,.5)';
         ctx.lineWidth = 1;
         ctx.beginPath(); ctx.arc(l.x, l.y, 8, 0, 6.3); ctx.stroke();
       }
@@ -161,7 +161,7 @@
     pings = pings.filter(function (p) {
       var age = (t - p.t) / 6;
       if (age > 1 || age < 0) return false;
-      ctx.strokeStyle = (p.lumi ? 'rgba(121,201,166,' : 'rgba(226,112,95,') + (0.7 * (1 - age)).toFixed(3) + ')';
+      ctx.strokeStyle = (p.lumi ? 'rgba(62,154,214,' : 'rgba(209,82,74,') + (0.75 * (1 - age)).toFixed(3) + ')';
       ctx.lineWidth = 1.2;
       ctx.beginPath(); ctx.arc(p.x, p.y, 6 + age * 46, 0, 6.3); ctx.stroke();
       return true;
