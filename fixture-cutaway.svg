@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-label="Cutaway of a streetlight luminaire showing where the Lumi Alert module installs inline with the driver, with a callout listing what it measures.">
+  <defs>
+    <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8DE8F" stop-opacity=".55"/>
+      <stop offset="100%" stop-color="#F8DE8F" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="housing" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#E7EEF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- light cone -->
+  <path d="M352 196 L196 470 L560 470 Z" fill="url(#cone)"/>
+  <ellipse cx="378" cy="470" rx="186" ry="16" fill="#F8DE8F" opacity=".35"/>
+
+  <!-- pole + arm -->
+  <rect x="118" y="90" width="20" height="380" rx="6" fill="#C3D4E4"/>
+  <path d="M128 120 C128 84 190 72 232 72 L300 72" stroke="#C3D4E4" stroke-width="20" fill="none" stroke-linecap="round"/>
+
+  <!-- luminaire housing -->
+  <path d="M288 74 L470 74 Q492 74 488 96 L470 176 Q466 196 444 196 L300 196 Q278 196 282 176 L296 96 Q300 74 288 74 Z"
+        fill="url(#housing)" stroke="#CBD9E6" stroke-width="2"/>
+  <!-- lens -->
+  <path d="M300 180 L452 180 Q462 180 460 190 L458 196 L296 196 Z" fill="#FFF4D4" stroke="#EBD9A4"/>
+  <!-- cutaway: driver + module -->
+  <rect x="312" y="96" width="76" height="40" rx="8" fill="#EDF2F8" stroke="#D3DFEA"/>
+  <text x="350" y="121" text-anchor="middle" font-family="Inter,Helvetica,Arial,sans-serif" font-size="12" font-weight="600" fill="#86868B">driver</text>
+  <rect x="400" y="96" width="62" height="40" rx="8" fill="#8FCBF0" stroke="#3E9AD6"/>
+  <circle cx="431" cy="116" r="7" fill="#FFFFFF"/><circle cx="431" cy="116" r="3.4" fill="#E0A82A"/>
+  <path d="M388 116 L400 116M462 116 L476 116" stroke="#9FB4C8" stroke-width="4" stroke-linecap="round"/>
+  <text x="431" y="152" text-anchor="middle" font-family="Inter,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#1C6698">LA-100</text>
+
+  <!-- callout line -->
+  <path d="M470 116 C560 116 580 150 650 150" stroke="#CDE6F8" stroke-width="2.5" fill="none" stroke-dasharray="6 7"/>
+  <circle cx="470" cy="116" r="5" fill="#3E9AD6"/>
+
+  <!-- callout card -->
+  <rect x="650" y="84" width="470" height="300" rx="20" fill="#FFFFFF" stroke="#E2EAF2" stroke-width="2"/>
+  <text x="686" y="132" font-family="Inter,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#1D1D1F" letter-spacing="-.5">Installed inline. Four signals.</text>
+  <text x="686" y="160" font-family="Inter,Helvetica,Arial,sans-serif" font-size="14" fill="#515661">About four minutes per fixture, no new wiring.</text>
+
+  <g font-family="Inter,Helvetica,Arial,sans-serif" font-size="14.5" fill="#1D1D1F">
+    <circle cx="694" cy="200" r="7" fill="#8FCBF0"/><text x="714" y="205">Current draw — a dead lamp pulls nothing</text>
+    <circle cx="694" cy="240" r="7" fill="#F8DE8F"/><text x="714" y="245">Lumen output — catches dimming before failure</text>
+    <circle cx="694" cy="280" r="7" fill="#8FCBF0"/><text x="714" y="285">Voltage — flags flicker and driver fault codes</text>
+    <circle cx="694" cy="320" r="7" fill="#F8DE8F"/><text x="714" y="325">Temperature — the early warning on both</text>
+  </g>
+  <rect x="686" y="344" width="200" height="1" fill="#EDF2F7"/>
+  <text x="686" y="366" font-family="Inter,Helvetica,Arial,sans-serif" font-size="12.5" fill="#86868B">LED · HID · metal halide · 10–1000W · 120–480V</text>
+</svg>

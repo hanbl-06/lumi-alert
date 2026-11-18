@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img" aria-label="The Lumi Alert GW-4 gateway: a wall-mounted white enclosure with two antennas and a row of status lights.">
+  <defs>
+    <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EDF2F8"/>
+    </linearGradient>
+    <linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CDE6F8"/><stop offset="100%" stop-color="#8FCBF0"/>
+    </linearGradient>
+    <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DCE7F2"/><stop offset="100%" stop-color="#C0D2E3"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="320" cy="400" rx="168" ry="18" fill="#1D1D1F" opacity=".07"/>
+
+  <!-- signal arcs -->
+  <g stroke="#8FCBF0" fill="none" stroke-linecap="round">
+    <path d="M196 120a58 58 0 0 1 0-74" stroke-width="5" opacity=".9"/>
+    <path d="M170 138a92 92 0 0 1 0-110" stroke-width="5" opacity=".6"/>
+    <path d="M144 156a126 126 0 0 1 0-146" stroke-width="5" opacity=".32"/>
+    <path d="M444 120a58 58 0 0 0 0-74" stroke-width="5" opacity=".9"/>
+    <path d="M470 138a92 92 0 0 0 0-110" stroke-width="5" opacity=".6"/>
+    <path d="M496 156a126 126 0 0 0 0-146" stroke-width="5" opacity=".32"/>
+  </g>
+
+  <!-- antennas -->
+  <rect x="214" y="74" width="14" height="106" rx="7" fill="#B9CBDC"/>
+  <rect x="412" y="74" width="14" height="106" rx="7" fill="#B9CBDC"/>
+
+  <!-- enclosure -->
+  <path d="M176 182 L228 142 L464 142 L412 182 Z" fill="url(#gTop)"/>
+  <path d="M412 182 L464 142 L464 316 L412 356 Z" fill="url(#gSide)"/>
+  <rect x="176" y="182" width="236" height="174" rx="20" fill="url(#gFront)" stroke="#D8E3EE" stroke-width="1.5"/>
+
+  <!-- status LEDs -->
+  <g>
+    <circle cx="216" cy="222" r="9" fill="#2E9E6B"/>
+    <circle cx="248" cy="222" r="9" fill="#8FCBF0"/>
+    <circle cx="280" cy="222" r="9" fill="#E0A82A"/>
+    <text x="300" y="227" font-family="Inter,Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#86868B">online</text>
+  </g>
+
+  <!-- vent slots -->
+  <g fill="#E8EEF5">
+    <rect x="216" y="256" width="156" height="8" rx="4"/>
+    <rect x="216" y="274" width="156" height="8" rx="4"/>
+    <rect x="216" y="292" width="110" height="8" rx="4"/>
+  </g>
+
+  <text x="216" y="334" font-family="Inter,Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#1C6698" letter-spacing="-.5">GW-4</text>
+  <text x="282" y="334" font-family="Inter,Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#86868B">LTE-M / LoRaWAN</text>
+
+  <!-- mounting ears -->
+  <circle cx="166" cy="206" r="8" fill="#C3D4E4"/>
+  <circle cx="166" cy="332" r="8" fill="#C3D4E4"/>
+</svg>

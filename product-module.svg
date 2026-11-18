@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" width="640" height="460" role="img" aria-label="The Lumi Alert LA-100 sensor module: a sealed white and blue inline module with an amber status light and two wire leads.">
+  <defs>
+    <linearGradient id="mTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#CDE6F8"/><stop offset="100%" stop-color="#8FCBF0"/>
+    </linearGradient>
+    <linearGradient id="mFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#EEF3F9"/>
+    </linearGradient>
+    <linearGradient id="mSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#DCE7F2"/><stop offset="100%" stop-color="#C3D4E4"/>
+    </linearGradient>
+    <radialGradient id="led" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD24A" stop-opacity=".95"/>
+      <stop offset="55%" stop-color="#F8DE8F" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#F8DE8F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <ellipse cx="320" cy="392" rx="190" ry="20" fill="#1D1D1F" opacity=".07"/>
+
+  <!-- leads -->
+  <path d="M118 262c-42 6-66-10-84-34" stroke="#C3D4E4" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M118 286c-48 10-80 2-100-16" stroke="#9FB4C8" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M522 262c42 6 66-10 84-34" stroke="#C3D4E4" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M522 286c48 10 80 2 100-16" stroke="#9FB4C8" stroke-width="9" fill="none" stroke-linecap="round"/>
+
+  <!-- cable glands -->
+  <rect x="96" y="246" width="40" height="56" rx="10" fill="#B9CBDC"/>
+  <rect x="504" y="246" width="40" height="56" rx="10" fill="#B9CBDC"/>
+
+  <!-- body: top, front, side -->
+  <path d="M150 196 L214 150 L516 150 L452 196 Z" fill="url(#mTop)"/>
+  <path d="M452 196 L516 150 L516 300 L452 346 Z" fill="url(#mSide)"/>
+  <rect x="150" y="196" width="302" height="150" rx="18" fill="url(#mFront)" stroke="#D8E3EE" stroke-width="1.5"/>
+
+  <!-- face detail -->
+  <rect x="176" y="222" width="150" height="10" rx="5" fill="#E4ECF4"/>
+  <rect x="176" y="246" width="96" height="9" rx="4.5" fill="#EDF2F7"/>
+  <text x="176" y="316" font-family="Inter,Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#1C6698" letter-spacing="-.5">LA-100</text>
+  <text x="258" y="316" font-family="Inter,Helvetica,Arial,sans-serif" font-size="14" font-weight="500" fill="#86868B">inline sensor</text>
+
+  <!-- status light -->
+  <circle cx="400" cy="262" r="46" fill="url(#led)"/>
+  <circle cx="400" cy="262" r="15" fill="#FFFFFF" stroke="#E0A82A" stroke-width="3"/>
+  <circle cx="400" cy="262" r="7" fill="#E0A82A"/>
+
+  <!-- sealing ribs on the top face -->
+  <path d="M236 180 L300 134M268 180 L332 134M300 180 L364 134" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3"/>
+
+  <!-- IP67 tag -->
+  <rect x="352" y="300" width="78" height="26" rx="13" fill="#F4F7FB" stroke="#D8E3EE"/>
+  <text x="391" y="318" text-anchor="middle" font-family="Inter,Helvetica,Arial,sans-serif" font-size="13" font-weight="600" fill="#515661">IP67</text>
+</svg>

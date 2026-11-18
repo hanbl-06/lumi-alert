@@ -67,6 +67,7 @@ That URL is what you submit.
 | `matcher.js` | The partner fit-score engine |
 | `chat.js` | "Beacon", the chatbot — injected on both pages |
 | `favicon.svg`, `hero-poster.svg` | Brand icon and the hero's static fallback frame |
+| `product-module.svg`, `product-gateway.svg`, `product-dashboard.svg`, `fixture-cutaway.svg` | Product imagery — vector renders of the sensor, gateway, dashboard and the install cutaway. Swap in real photos any time: drop a `.jpg` in this folder and change the `src` on the matching `<img>` in `index.html` |
 
 ### Lab 5 checklist
 
