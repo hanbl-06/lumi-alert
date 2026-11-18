@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumi Alert — Every light reports itself</title>
+<meta name="description" content="Lumi Alert puts a self-reporting sensor in every fixture, so cities, campuses and property teams know the moment a light goes dark — no patrols, no complaint calls, no blind truck rolls.">
+<meta name="theme-color" content="#05070C">
+<meta property="og:title" content="Lumi Alert — Every light reports itself">
+<meta property="og:description" content="Lamp-failure detection for anyone who runs a lot of lights. Know the moment a light goes dark.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lumi.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <a class="brand" href="index.html" aria-label="Lumi Alert home">
+    <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="15" stroke="#D4AF6A" stroke-width=".8" opacity=".55"/>
+      <path d="M16 7.5a6 6 0 0 0-3.4 10.95c.5.36.8.93.8 1.55v.5h5.2v-.5c0-.62.3-1.19.8-1.55A6 6 0 0 0 16 7.5Z" stroke="#D4AF6A" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M13.9 23h4.2M14.6 25.4h2.8" stroke="#D4AF6A" stroke-width="1.3" stroke-linecap="round"/>
+      <circle cx="16" cy="13.6" r="1.6" fill="#E6CB93"/>
+    </svg>
+    <span class="nm">Lumi<b>Alert</b></span>
+  </a>
+  <nav class="nav-links" id="navLinks" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#savings">Savings</a>
+    <a href="#grid">Live grid</a>
+    <a href="partners.html">Partner program</a>
+    <a class="btn sm" href="partners.html">Find your match <span class="arw">→</span></a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+  </button>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-media" id="heroMedia">
+    <!-- AI-generated hero video: autoplays, loops, muted, inline. -->
+    <video id="heroVideo" autoplay loop muted playsinline preload="auto" poster="hero-poster.svg" aria-label="Aerial night view of a street grid where one dark streetlight is detected and reported">
+      <source src="hero.mp4" type="video/mp4">
+      <source src="hero.webm" type="video/webm">
+    </video>
+    <!-- Generative fallback / ambience layer: never a blank hero. -->
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  </div>
+  <div class="hero-scrim"></div>
+
+  <div class="hero-inner wrap">
+    <p class="eyebrow">Lamp-failure detection &amp; energy intelligence</p>
+    <h1>Know the moment a light goes <span class="glowword">dark</span>.</h1>
+    <p class="lead">Lumi Alert drops a self-reporting sensor into the fixtures you already own. Every lamp tells you when it dims, flickers, draws the wrong current or dies — so your crew stops hunting for failures and starts fixing them.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#savings">See what you'd save <span class="arw">→</span></a>
+      <a class="btn ghost" href="partners.html">Find your partner match <span class="arw">→</span></a>
+    </div>
+    <p class="hero-note">Retrofits in under 4 minutes per fixture · Works with LED, HID and metal halide · No new wiring</p>
+  </div>
+
+  <div class="video-badge"><span class="dot"></span> Concept visualization · Sector 7 · 1,284 fixtures</div>
+  <div class="scroll-cue"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Municipal street lighting</span><span>K–12 &amp; higher education</span><span>Retail &amp; mall parking</span>
+    <span>Industrial yards &amp; ports</span><span>Parking structures</span><span>Stadiums &amp; recreation</span>
+    <span>Hospital campuses</span><span>Transit platforms</span>
+    <span>Municipal street lighting</span><span>K–12 &amp; higher education</span><span>Retail &amp; mall parking</span>
+    <span>Industrial yards &amp; ports</span><span>Parking structures</span><span>Stadiums &amp; recreation</span>
+    <span>Hospital campuses</span><span>Transit platforms</span>
+  </div>
+</div>
+
+<!-- ================= PROBLEM ================= -->
+<section id="problem">
+  <div class="wrap">
+    <div class="grid g-2" style="align-items:center;gap:clamp(30px,5vw,70px)">
+      <div class="rv">
+        <p class="eyebrow">The invisible line item</p>
+        <h2>Nobody knows a light is out until someone complains.</h2>
+        <p class="lead">A failed fixture is quiet. It doesn't trip an alarm, it doesn't open a ticket, and it keeps drawing standby current while it fails. So detection gets outsourced to the two worst sensors available: a night patrol driving every street, or a resident who finally picks up the phone.</p>
+        <p class="lead">Both are slow. Both are expensive. Both send a truck out with a guess instead of an address.</p>
+      </div>
+      <div class="grid rv" style="gap:16px">
+        <div class="card">
+          <h3>Patrols cost more than parts</h3>
+          <p>Driving a grid to look for dark lamps is paid labor, fuel and vehicle hours spent confirming that almost everything is fine.</p>
+        </div>
+        <div class="card">
+          <h3>Dark weeks become liability</h3>
+          <p>Unlit walkways, lots and stairwells are the first thing cited after an incident — and the hardest thing to prove you addressed quickly.</p>
+        </div>
+        <div class="card">
+          <h3>Blind truck rolls repeat</h3>
+          <p>Without a fault code, a crew arrives, diagnoses on a ladder, leaves for the right driver or lamp, and comes back. One failure, two visits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats rv" id="stats">
+      <div class="stat"><div class="num" data-count="92" data-suffix="%">0%</div><div class="lbl">Patrol hours eliminated</div></div>
+      <div class="stat"><div class="num" data-count="11" data-prefix="&lt;" data-suffix=" min">0</div><div class="lbl">Median detection time</div></div>
+      <div class="stat"><div class="num" data-count="38" data-suffix="%">0%</div><div class="lbl">Fewer repeat truck rolls</div></div>
+      <div class="stat"><div class="num" data-count="7" data-suffix=" mo">0</div><div class="lbl">Typical payback period</div></div>
+    </div>
+    <p class="disclaim rv" style="text-align:center;max-width:70ch;margin:18px auto 0">Figures are modeled from pilot deployments across municipal and campus lighting networks and are illustrative. Your numbers depend on fixture count, service model and labor rates — the calculator below runs them on your inputs.</p>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head center rv">
+      <p class="eyebrow center">How it works</p>
+      <h2>Three parts. One answer: which lamp, and what's wrong with it.</h2>
+      <p class="lead" style="margin-inline:auto">No new conduit, no controls retrofit, no rip-and-replace. The sensor sits inline with the fixture you already own.</p>
+    </div>
+    <div class="grid g-3">
+      <article class="card rv">
+        <span class="step-no">01</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 3a6 6 0 0 0-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0 0 12 3Z"/><path d="M10 19h4M10.6 21.5h2.8"/></svg>
+        <h3>Sense</h3>
+        <p>A sealed inline module reads current draw, voltage, lumen output and temperature at the fixture. It knows the difference between <em>off by schedule</em>, <em>dimming toward failure</em>, <em>flickering driver</em> and <em>dead lamp</em>.</p>
+      </article>
+      <article class="card rv">
+        <span class="step-no">02</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 18.5v.01"/><path d="M8.5 15a5 5 0 0 1 7 0M5.5 11.5a10 10 0 0 1 13 0M2.5 8a15 15 0 0 1 19 0"/></svg>
+        <h3>Report</h3>
+        <p>Each module meshes to its neighbours and backhauls over LTE-M or LoRaWAN — so a single gateway covers a corridor, a campus or a lot. Battery-backed, so a power loss is itself a reported event.</p>
+      </article>
+      <article class="card rv">
+        <span class="step-no">03</span>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 15l4-5 3.5 3L21 6"/></svg>
+        <h3>Resolve</h3>
+        <p>A dark lamp becomes a work order with a pole ID, a GPS pin, a fault code and the part to bring. Route the whole night's failures in one pass; track mean time to repair instead of guessing at it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+<section id="savings" style="background:linear-gradient(180deg,var(--ink-900),#090D15 40%,var(--ink-900))">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">Savings model</p>
+      <h2>What does not knowing actually cost you?</h2>
+      <p class="lead">Move the numbers to match your operation. Everything recalculates live — detection labor, wasted energy, repeat visits, and what's left after you pay for Lumi Alert.</p>
+    </div>
+
+    <div class="calc">
+      <!-- INPUTS -->
+      <div class="panel rv">
+        <div class="field">
+          <label for="fixtures">Fixtures you maintain <span class="val" id="fixturesVal">2,400</span></label>
+          <input type="range" id="fixtures" min="100" max="40000" step="100" value="2400">
+          <p class="hint">Streetlights, lot poles, wall packs, garage and interior high-bays — anything you're responsible for relamping.</p>
+        </div>
+
+        <div class="field">
+          <label>Who you are</label>
+          <div class="seg stack" id="segmentPick" role="group" aria-label="Organization type">
+            <button type="button" data-seg="city" aria-pressed="true">City / public works</button>
+            <button type="button" data-seg="school" aria-pressed="false">School district or campus</button>
+            <button type="button" data-seg="commercial" aria-pressed="false">Retail, mall or commercial property</button>
+            <button type="button" data-seg="industrial" aria-pressed="false">Industrial, port or logistics yard</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>How failures are found today</label>
+          <div class="seg" id="methodPick" role="group" aria-label="Current detection method">
+            <button type="button" data-method="patrol" aria-pressed="true">Night patrol</button>
+            <button type="button" data-method="complaint" aria-pressed="false">Complaints</button>
+            <button type="button" data-method="mixed" aria-pressed="false">A bit of both</button>
+          </div>
+          <p class="hint" id="methodHint">A crew drives the grid on a route to spot dark lamps.</p>
+        </div>
+
+        <div class="field">
+          <label for="fixtureType">Predominant fixture type</label>
+          <div class="seg" id="fixtureType" role="group" aria-label="Fixture type">
+            <button type="button" data-ft="led" aria-pressed="true">LED</button>
+            <button type="button" data-ft="mixed" aria-pressed="false">Mixed fleet</button>
+            <button type="button" data-ft="legacy" aria-pressed="false">HID / halide</button>
+          </div>
+          <p class="hint" id="ftHint">Modern LED fleet — roughly 4% of fixtures need service in a year.</p>
+        </div>
+
+        <details class="assume">
+          <summary>Adjust the assumptions</summary>
+          <div class="inner">
+            <div>
+              <label class="hint" for="laborRate" style="display:block;margin-bottom:7px">Loaded labor rate ($/hr)</label>
+              <input class="num-in" type="number" id="laborRate" value="48" min="15" max="200" step="1">
+            </div>
+            <div>
+              <label class="hint" for="rollCost" style="display:block;margin-bottom:7px">Cost per truck roll ($)</label>
+              <input class="num-in" type="number" id="rollCost" value="185" min="40" max="900" step="5">
+            </div>
+            <div>
+              <label class="hint" for="kwhRate" style="display:block;margin-bottom:7px">Electricity rate ($/kWh)</label>
+              <input class="num-in" type="number" id="kwhRate" value="0.16" min="0.03" max="0.70" step="0.01">
+            </div>
+            <div>
+              <label class="hint" for="watt" style="display:block;margin-bottom:7px">Avg fixture wattage (W)</label>
+              <input class="num-in" type="number" id="watt" value="95" min="10" max="1000" step="5">
+            </div>
+            <div>
+              <label class="hint" for="vehRate" style="display:block;margin-bottom:7px">Service vehicle cost ($/hr)</label>
+              <input class="num-in" type="number" id="vehRate" value="22" min="0" max="120" step="1">
+            </div>
+            <div>
+              <label class="hint" for="patrolHrs" style="display:block;margin-bottom:7px">Patrol &amp; verification hrs / 1,000 fixtures / month</label>
+              <input class="num-in" type="number" id="patrolHrs" value="12" min="0" max="60" step="0.5">
+            </div>
+            <div style="grid-column:1/-1">
+              <label class="hint" for="unitCost" style="display:block;margin-bottom:7px">Lumi Alert $/fixture/year</label>
+              <input class="num-in" type="number" id="unitCost" value="7.5" min="2" max="60" step="0.25">
+              <p class="hint" id="unitHint" style="margin-top:8px"></p>
+            </div>
+          </div>
+          <p class="disclaim">Defaults are mid-range North American figures for 2026 and are editable because every operation differs. This model is an estimate, not a quote or a guarantee of savings.</p>
+        </details>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="panel result rv">
+        <p class="eyebrow">Estimated year one</p>
+        <div class="headline-num" id="netSave">$0</div>
+        <div class="headline-sub">Net savings after Lumi Alert</div>
+
+        <dl style="margin-top:28px">
+          <div class="kv"><dt>Detection labor recovered</dt><dd class="pos" id="rLabor">$0</dd></div>
+          <div class="kv"><dt>Repeat &amp; blind truck rolls avoided</dt><dd class="pos" id="rRolls">$0</dd></div>
+          <div class="kv"><dt>Wasted energy reclaimed</dt><dd class="pos" id="rEnergy">$0</dd></div>
+          <div class="kv"><dt>Complaint &amp; dispatch handling</dt><dd class="pos" id="rAdmin">$0</dd></div>
+          <div class="kv" style="border-top:1px solid var(--line);margin-top:6px;padding-top:15px"><dt>Lumi Alert program cost</dt><dd class="neg" id="rCost">$0</dd></div>
+        </dl>
+
+        <div class="bars">
+          <div class="bar-row"><span>Today</span><div class="bar before"><i id="barBefore"></i><b id="barBeforeTxt">$0</b></div></div>
+          <div class="bar-row"><span>With Lumi</span><div class="bar after"><i id="barAfter"></i><b id="barAfterTxt">$0</b></div></div>
+        </div>
+
+        <div class="grid g-3" style="margin-top:30px;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:var(--r-md);overflow:hidden">
+          <div style="background:rgba(255,255,255,.02);padding:18px 14px;text-align:center">
+            <div style="font-family:var(--serif);font-size:1.7rem;color:var(--brass-400);line-height:1" id="rRoi">0%</div>
+            <div style="font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);margin-top:8px">Return on spend</div>
+          </div>
+          <div style="background:rgba(255,255,255,.02);padding:18px 14px;text-align:center">
+            <div style="font-family:var(--serif);font-size:1.7rem;color:var(--brass-400);line-height:1" id="rPayback">0 mo</div>
+            <div style="font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);margin-top:8px">Payback</div>
+          </div>
+          <div style="background:rgba(255,255,255,.02);padding:18px 14px;text-align:center">
+            <div style="font-family:var(--serif);font-size:1.7rem;color:var(--brass-400);line-height:1" id="rDark">0</div>
+            <div style="font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mute);margin-top:8px">Dark-nights avoided</div>
+          </div>
+        </div>
+
+        <p id="calcNarrative" class="disclaim" style="font-size:.86rem;color:var(--text-dim);border-top:1px solid var(--line-soft);margin-top:22px;padding-top:18px"></p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:20px">
+          <button class="btn sm" id="copyEstimate" type="button">Copy this estimate</button>
+          <a class="btn sm ghost" href="partners.html#match">Check partner fit <span class="arw">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= X-FACTOR: LIVE GRID ================= -->
+<section id="grid">
+  <div class="wrap">
+    <div class="section-head rv">
+      <p class="eyebrow">The live grid · interactive</p>
+      <h2>Watch the same night play out twice.</h2>
+      <p class="lead">This is one week of a 96-fixture district, compressed. Lamps fail the way real ones do — at random, mostly unnoticed. Flip the detection mode, or click any lamp to knock it out yourself, and watch how long it stays dark.</p>
+    </div>
+
+    <div class="sim-shell rv">
+      <div class="sim-bar">
+        <div class="seg" id="simMode" role="group" aria-label="Detection mode">
+          <button type="button" data-mode="manual" aria-pressed="true">Patrol &amp; complaints</button>
+          <button type="button" data-mode="lumi" aria-pressed="false">Lumi Alert</button>
+        </div>
+        <div style="display:flex;gap:9px;align-items:center">
+          <button class="chip" id="simFail" type="button">Break a random lamp</button>
+          <button class="chip" id="simReset" type="button">Reset week</button>
+          <button class="chip" id="simPause" type="button" aria-pressed="false">Pause</button>
+        </div>
+      </div>
+      <div class="sim-canvas-wrap">
+        <canvas id="simCanvas" role="img" aria-label="Animated map of a lighting district. Lit fixtures glow amber, failed fixtures go dark, and repaired fixtures flash as crews arrive."></canvas>
+        <span class="sim-hint">Click a lamp to break it</span>
+      </div>
+      <div class="sim-readout">
+        <div><div class="n" id="simDay">Day 1</div><div class="l">Elapsed</div></div>
+        <div><div class="n lo" id="simOut">0</div><div class="l">Dark right now</div></div>
+        <div><div class="n" id="simDetect">—</div><div class="l">Avg detection time</div></div>
+        <div><div class="n hi" id="simDarkHrs">0</div><div class="l">Dark-hours this week</div></div>
+      </div>
+    </div>
+    <p class="disclaim rv" style="margin-top:16px">Simulation runs on the same assumptions as the calculator: patrol cycles find failures on their next sweep, complaints arrive on a long tail, and Lumi Alert reports at the fixture within minutes.</p>
+  </div>
+</section>
+
+<!-- ================= SEGMENTS ================= -->
+<section id="who" style="background:linear-gradient(180deg,var(--ink-900),#090D15 50%,var(--ink-900))">
+  <div class="wrap">
+    <div class="section-head center rv">
+      <p class="eyebrow center">Who this is for</p>
+      <h2>If you own more lights than you can look at, you're the customer.</h2>
+    </div>
+    <div class="grid g-4">
+      <article class="card rv"><h3>Cities &amp; public works</h3><p>Pole-level accountability across thousands of street and park fixtures. Answer a council question about outage response with a number instead of an anecdote.</p></article>
+      <article class="card rv"><h3>Schools &amp; campuses</h3><p>Lots, walkways and stairwells checked every night without sending anyone to check. Safety-lighting compliance you can export.</p></article>
+      <article class="card rv"><h3>Retail &amp; commercial</h3><p>A dark storefront lot reads as closed. Catch failures before the evening rush instead of after a tenant complains.</p></article>
+      <article class="card rv"><h3>Industrial &amp; ports</h3><p>High-bay and yard fixtures that take a lift to reach. Know what's wrong before the lift is scheduled, not after it's parked.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band rv">
+      <p class="eyebrow center">Partner program</p>
+      <h2 style="max-width:24ch;margin-inline:auto">We don't climb the poles. Our partners do.</h2>
+      <p class="lead" style="margin:0 auto 2rem">Lumi Alert ships through electrical contractors, lighting distributors and smart-infrastructure integrators. Run the fit check and see which track you qualify for — scored on your fleet, your crews and your service model.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="partners.html#match">Run the partner fit check <span class="arw">→</span></a>
+        <a class="btn ghost" href="partners.html">Read the program <span class="arw">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <!-- X-FACTOR DESCRIPTION (assignment requirement, under 50 words) -->
+    <div class="xfactor">
+      <b>Creative X-factor — The Live Grid simulator</b>
+      <p>An interactive canvas district where lamps fail in real time. Switch between patrol-and-complaint detection and Lumi Alert, or click a lamp to break it, and watch dark-hours accumulate live — turning our core value claim into something you can play with instead of read.</p>
+    </div>
+
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="margin-bottom:16px">
+          <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <circle cx="16" cy="16" r="15" stroke="#D4AF6A" stroke-width=".8" opacity=".55"/>
+            <path d="M16 7.5a6 6 0 0 0-3.4 10.95c.5.36.8.93.8 1.55v.5h5.2v-.5c0-.62.3-1.19.8-1.55A6 6 0 0 0 16 7.5Z" stroke="#D4AF6A" stroke-width="1.3" stroke-linejoin="round"/>
+            <path d="M13.9 23h4.2M14.6 25.4h2.8" stroke="#D4AF6A" stroke-width="1.3" stroke-linecap="round"/>
+            <circle cx="16" cy="13.6" r="1.6" fill="#E6CB93"/>
+          </svg>
+          <span class="nm">Lumi<b>Alert</b></span>
+        </a>
+        <p style="max-width:42ch;font-size:.9rem">Lamp-failure detection and energy intelligence for anyone who runs a lot of lights. Every fixture reports itself, so your crew stops looking and starts fixing.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#savings">Savings calculator</a></li>
+          <li><a href="#grid">Live grid simulator</a></li>
+          <li><a href="#who">Who it's for</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="partners.html">Partner program</a></li>
+          <li><a href="partners.html#match">Fit check</a></li>
+          <li><a href="partners.html#faq">FAQ</a></li>
+          <li><a href="mailto:hello@lumialert.io">hello@lumialert.io</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Lumi Alert. A student business concept — figures are modeled estimates, not quotes.</span>
+      <span>Built for Lab 5 · Hosted on GitHub Pages</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+<script src="calculator.js"></script>
+<script src="simulator.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>
