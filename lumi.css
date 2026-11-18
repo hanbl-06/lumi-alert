@@ -245,6 +245,20 @@ figure{margin:0}
 .shot.wide img{background:#fff}
 .shot.wide figcaption{border-top:1px solid var(--line-soft);background:#fff}
 
+/* ---------- photography ---------- */
+.band{position:relative;margin:0;overflow:hidden}
+.band img{width:100%;height:clamp(330px,56vh,540px);object-fit:cover;display:block;background:#0B1220}
+.band figcaption{position:absolute;inset:auto 0 0 0;padding:clamp(26px,5vw,60px);
+  background:linear-gradient(to top,rgba(8,13,22,.88) 10%,rgba(8,13,22,.45) 60%,rgba(8,13,22,0) 100%)}
+.band h2{color:#fff;max-width:19ch;margin-bottom:.3em}
+.band p{color:rgba(255,255,255,.88);max-width:54ch;margin:0;font-size:clamp(1rem,1.4vw,1.15rem)}
+.band-wrap{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-soft)}
+.card.photo{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.card.photo img{width:100%;height:188px;object-fit:cover;background:var(--wash)}
+.card.photo .body{padding:clamp(20px,2.2vw,26px)}
+.card.photo .body p:last-child{margin-bottom:0}
+.credit{font-size:.76rem;color:var(--text-mute)}
+
 /* ---------- stats ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);
   border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
